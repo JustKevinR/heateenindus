@@ -61,4 +61,6 @@ By using this script, you agree to release, indemnify, and hold harmless the aut
 
 If you do not agree with these terms, you should not use this script.
 
+# Keywords :
+
 tele 2, denim dteam, tartu, telia, olerex, dive, eesti kaupmeeste liit, aqva, eesti ettevõtluskõrkool, tradehouse, germund, coop, myfitness, jardin lilled, kvartal, viiking spa-hotel, juuksurite ühendus, armastus cafe, tallink, tarvijakaitseamet, viljar lillmaa, tallink hotels, hedon, fit life, lõunakeskus, merike läte, anna grace, mariine auto, jazz pesulad, bigbank, R kiosk, caffeine, ergo
