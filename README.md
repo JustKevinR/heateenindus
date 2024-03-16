@@ -1,38 +1,49 @@
-Setup:
+![Good job](https://www.heateenindus.ee/images/logo-ht.png)  ![Good job](https://www.heateenindus.ee/kiidan/images/est.png)  ![Good job](https://www.heateenindus.ee/kiidan/images/eng.png)  ![Good job](https://www.heateenindus.ee/kiidan/images/rus.png)
 
-Ensure you have Python installed on your system.
-Install the required libraries by running pip install selenium.
-File Preparation:
 
-Prepare a text file named comments.txt containing the comments you want to post. Each comment should be on a separate line.
-Ensure the text file is encoded in UTF-8 format.
-Execution:
+# Setup:
 
-Run the script using Python.
-Follow the instructions provided in the console.
-Input Instructions:
 
-URL: Enter the URL of the website where you want to post comments.
-Number of Runs: Enter the number of times you want the script to run. You can also enter 'endless' for the script to run indefinitely.
-Cooldown Type: Choose between 'fixed' and 'realistic' for the cooldown period between runs.
-Cooldown Duration: If you choose 'fixed' cooldown type, enter the duration of the cooldown in minutes. If you choose 'realistic', you don't need to enter anything.
-Execution:
+## 1. Ensure you have Python installed on your system.
 
-The script will launch the Microsoft Edge browser.
-It will open the specified URL and start posting comments from the comments.txt file.
-After posting each comment, it will wait for you to press Enter before closing the browser.
-If you have specified a limited number of runs, the script will terminate after completing the specified number of runs.
-If you have chosen 'endless' runs, the script will continue running indefinitely until you manually stop it.
-Cooldown:
+## 2. Install the required libraries by running pip install selenium.
 
-If you have selected the 'fixed' cooldown type, the script will wait for the specified duration between each run.
-If you have selected the 'realistic' cooldown type, the script will wait for a random time between 15 minutes to 4 hours between each run.
-Exit:
+## 3. File Preparation:
+
+  Prepare a text file named comments.txt containing the comments you want to post. Each comment should be on a separate line.
+  Ensure the text file is encoded in UTF-8 format.
+
+## 4. Execution:
+
+  Run the script using Python.
+  Follow the instructions provided in the console.
+
+## 5. Input Instructions:
+
+  URL: Enter the URL of the website where you want to post comments.
+  Number of Runs: Enter the number of times you want the script to run. You can also enter 'endless' for the script to run indefinitely.
+  Cooldown Type: Choose between 'fixed' and 'realistic' for the cooldown period between runs.
+  Cooldown Duration: If you choose 'fixed' cooldown type, enter the duration of the cooldown in minutes. If you choose 'realistic', you don't need to enter anything.
+
+## 6. Execution:
+
+  The script will launch the Microsoft Edge browser.
+  It will open the specified URL and start posting comments from the comments.txt file.
+  After posting each comment, it will wait for you to press Enter before closing the browser.
+  If you have specified a limited number of runs, the script will terminate after completing the specified number of runs.
+  If you have chosen 'endless' runs, the script will continue running indefinitely until you manually stop it.
+
+## 7. Cooldown:
+
+  If you have selected the 'fixed' cooldown type, the script will wait for the specified duration between each run.
+  If you have selected the 'realistic' cooldown type, the script will wait for a random time between 15 minutes to 4 hours between each run.
+
+## 8. Exit:
 
 You can stop the script execution at any time by terminating the Python process.
 
 
-Disclaimer:
+# *Disclaimer:*
 
 This script is provided for educational and informational purposes only. By using this script, you understand and agree that:
 
