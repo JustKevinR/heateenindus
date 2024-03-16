@@ -60,3 +60,5 @@ Use at Your Own Risk: Your use of this script is at your own risk. The author(s)
 By using this script, you agree to release, indemnify, and hold harmless the author(s) from any and all claims, damages, losses, liabilities, costs, and expenses arising out of or in connection with your use of the script.
 
 If you do not agree with these terms, you should not use this script.
+
+tele 2, denim dteam, tartu, telia, olerex, dive, eesti kaupmeeste liit, aqva, eesti ettevõtluskõrkool, tradehouse, germund, coop, myfitness, jardin lilled, kvartal, viiking spa-hotel, juuksurite ühendus, armastus cafe, tallink, tarvijakaitseamet, viljar lillmaa, tallink hotels, hedon, fit life, lõunakeskus, merike läte, anna grace, mariine auto, jazz pesulad, bigbank, R kiosk, caffeine, ergo
