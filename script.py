@@ -89,11 +89,12 @@ while num_runs == "endless" or run_count < num_runs:
     input_field = driver.find_element(By.ID, "kiidan_est___acclaim_text")
     input_field.send_keys(comments)
 
-    # Find the comment element and print confirmation
-    comment = driver.find_element(By.ID, 'kiidan_est___acclaim_text')
+    # Find the submit button and click on it
+    submit_button = driver.find_element(By.NAME, "Submit")
+    submit_button.click()
 
     # Prompt the user to press Enter before closing the browser
-    input("Press Enter to close the browser...")
+    # input("Press Enter to close the browser...")
 
     # Close the browser
     driver.quit()
@@ -112,19 +113,3 @@ while num_runs == "endless" or run_count < num_runs:
         time.sleep(cooldown_time * 60)  # Convert minutes to seconds
 
     run_count += 1
-
-
-
-
-#cooldown
-    #ask user to type in how long is the cooldown in minutes
-    # releastic cooldown beatween 15minutes -4 hours using a randomnumber gen
-
-#endless
-    #option that scrip would run until you stop it
-
-# maybe step by step user guid
-#disclaimer i made it for fun and dont recoment using it
-
-
-#fix endless with real
