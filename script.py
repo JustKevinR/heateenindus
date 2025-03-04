@@ -37,79 +37,61 @@ def ask_for_cooldown_duration():
         except ValueError:
             print("Please enter a valid non-negative integer for the cooldown duration, or 'none' to skip cooldown.")
 
-# Read comments from the text file with UTF-8 encoding
+def countdown_timer(seconds):
+    for remaining in range(seconds, 0, -1):
+        print(f"Cooldown: {remaining} seconds remaining...", end="\r", flush=True)
+        time.sleep(1)
+    print("Cooldown complete!             ")
+
+# Read comments from the text file
 with open("comments.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
 
-# If file is empty, exit the script
 if not lines:
     print("The comments file is empty. Exiting the script.")
     sys.exit()
 
-# Ask user for the URL
 url = input("Please enter the URL to visit: ")
-
-# Ask user for the number of times to run the script
 num_runs = ask_for_num_runs()
-
-# Choose the cooldown type and duration if applicable
 cooldown_type = ask_for_cooldown_type()
-if cooldown_type == 'fixed':
-    cooldown_minutes = ask_for_cooldown_duration()
+cooldown_minutes = ask_for_cooldown_duration() if cooldown_type == 'fixed' else None
 
-# Loop for the specified number of runs or endlessly
 run_count = 0
+
 while num_runs == "endless" or run_count < num_runs:
-    # Launch Microsoft Edge browser
-    driver = webdriver.Edge()
+    try:
+        driver = webdriver.Edge()
+        driver.get(url)
 
-    # Open the desired website
-    driver.get(url)
+        last_comment = None
 
-    # Initialize last_comment variable
-    last_comment = None
+        while True:
+            comment = random.choice(lines).strip()
+            if comment != last_comment:
+                last_comment = comment
+                break
 
-    # Loop until the generated comment is different from the last one
-    while True:
-        # Generate a random line number
-        random_line_number = random.randint(0, len(lines) - 1)
+        print(f"Loop {run_count + 1}/{num_runs if num_runs != 'endless' else 'Endless'}: Comment - {comment}")
 
-        # Select a random line from the file
-        comments = lines[random_line_number].strip()
+        input_field = driver.find_element(By.ID, "kiidan_est___acclaim_text")
+        input_field.send_keys(comment)
 
-        # Check if the comment is different from the last one
-        if comments != last_comment:
-            last_comment = comments
-            break
+        submit_button = driver.find_element(By.NAME, "Submit")
+        submit_button.click()
+    
+    finally:
+        driver.quit()
 
-    # Print the comment and loop number
-    print(f"Loop {run_count + 1}/{num_runs if num_runs != 'endless' else 'Endless'}: Comment - {comments}")
-
-    # Find the input field and send keys
-    input_field = driver.find_element(By.ID, "kiidan_est___acclaim_text")
-    input_field.send_keys(comments)
-
-    # Find the submit button and click on it
-    submit_button = driver.find_element(By.NAME, "Submit")
-    submit_button.click()
-
-    # Prompt the user to press Enter before closing the browser
-    # input("Press Enter to close the browser...")
-
-    # Close the browser
-    driver.quit()
-
-    # If not running endlessly or it's the last run, break out of the loop
     if num_runs != "endless" and run_count >= num_runs - 1:
         break
 
-    # Cooldown period
-    if cooldown_type == 'fixed':
+    # Cooldown logic with countdown timer
+    if cooldown_type == 'fixed' and cooldown_minutes:
         print(f"Cooldown for {cooldown_minutes} minute(s)...")
-        time.sleep(cooldown_minutes * 60)  # Convert minutes to seconds
+        countdown_timer(cooldown_minutes * 60)
     elif cooldown_type == 'realistic':
-        cooldown_time = random.uniform(15, 240)  # Random time between 15 minutes to 4 hours
+        cooldown_time = random.uniform(15, 240)
         print(f"Cooldown for {cooldown_time:.2f} minute(s)...")
-        time.sleep(cooldown_time * 60)  # Convert minutes to seconds
+        countdown_timer(int(cooldown_time * 60))
 
     run_count += 1
